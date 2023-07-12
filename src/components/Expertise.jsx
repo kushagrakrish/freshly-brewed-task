@@ -4,7 +4,7 @@ import { images, services } from "../constants/data";
 const Expertise = () => {
   return (
     <>
-      <div className='px-5 py-10 bg-[#C0E3FC] overflow-x-hidden'>
+      <div className='px-5 py-16 bg-[#C0E3FC] overflow-x-hidden'>
         <h1 className='text-center font-semibold font-inter text-4xl text-black '>
           Find the expertises from
         </h1>
