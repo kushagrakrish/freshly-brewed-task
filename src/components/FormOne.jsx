@@ -3,21 +3,25 @@ import form1 from "../assets/form1.png";
 import GoogleIcon from "@mui/icons-material/Google";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-const FormOne = () => {
+const FormOne = ({ handleNext }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleNext();
+  };
   return (
     <>
-      <div className='flex items-center gap-5'>
+      <div className='flex items-center gap-5 px-6'>
         <button className='flex  px-5 items-center gap-2 py-3 font-inter font-semibold outline-none border border-[#949090] rounded-lg text-base '>
           <GoogleIcon />
           Contine with Google
         </button>
         or
-        <button className='flex px-5  items-center gap-2 py-3 font-inter font-semibold outline-none border border-[#949090] rounded-lg text-base '>
+        <button className='flex px-5 items-center gap-2 py-3 font-inter font-semibold outline-none border border-[#949090] rounded-lg text-base '>
           <LinkedInIcon />
-          Contine with Google
+          Contine with LinkedIn
         </button>
       </div>
-      <div className='flex flex-col lg:flex-row w-full items-center justify-between overflow-y-hidden'>
+      <div className='flex flex-col lg:flex-row w-full items-center justify-between overflow-y-hidden px-6'>
         <form className='w-full lg:w-1/2'>
           <div class='mb-6'>
             <label
@@ -64,12 +68,13 @@ const FormOne = () => {
             />
           </div>
 
-          {/* <button
-          type='submit'
-          class='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold font-inter rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
-        >
-          Next
-        </button> */}
+          <button
+            type='submit'
+            className='px-8 py-1 rounded-full outline-none border-none  bg-gradient-to-b from-[#27EDD5] to-[#047E70] text-[#FFFFFF] text-xl float-right'
+            onClick={handleSubmit}
+          >
+            Next
+          </button>
         </form>
         <div className='flex items-start justify-start  mx-auto'>
           <img src={form1} alt='' className='w-[350px] ' />

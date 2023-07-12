@@ -1,12 +1,13 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
-import Stepper from "@mui/material/Stepper";
+import Button from "@mui/material/Button";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Button from "@mui/material/Button";
+import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
+import React from "react";
 import FormOne from "./FormOne";
-import form1 from "../assets/form1.png";
+import FormThree from "./FormThree";
+import FormTwo from "./FormTwo";
 
 const steps = ["", "", ""];
 
@@ -58,7 +59,7 @@ export default function HorizontalLinearStepper() {
 
   return (
     <>
-      <div className='w-full pt-12 h-[72vh] px-10 overflow-hidden'>
+      <div className='w-full py-12  px-10 overflow-hidden h-full'>
         <h1 className='text-2xl font-semibold mb-2 font-inter'>
           Great choice to help people!
         </h1>
@@ -90,13 +91,17 @@ export default function HorizontalLinearStepper() {
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
               <Box sx={{ flex: "1 1 auto" }} />
-              <Button onClick={handleReset}>Reset</Button>
+              <Button onClick={handleReset}>Complete</Button>
             </Box>
           </React.Fragment>
         ) : (
           <React.Fragment>
-            {activeStep === 0 && <FormOne />}
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+            {activeStep === 0 && <FormOne handleNext={handleNext} />}
+            {activeStep === 1 && <FormTwo handleNext={handleNext} />}
+            {activeStep === 2 && (
+              <FormThree handleReset={handleReset} handleNext={handleNext} />
+            )}
+            {/* <div className='flex items-center justify-end w-1/2'>
               <Button
                 color='inherit'
                 disabled={activeStep === 0}
@@ -108,11 +113,11 @@ export default function HorizontalLinearStepper() {
               <Box />
               <button
                 onClick={handleNext}
-                className='px-8 py-1 rounded-full outline-none border-none  bg-gradient-to-b from-[#27EDD5] to-[#047E70] text-[#FFFFFF] text-xl'
+                className='px-8 py-1 rounded-full outline-none border-none  bg-gradient-to-b from-[#27EDD5] to-[#047E70] text-[#FFFFFF] text-xl '
               >
                 {activeStep === steps.length - 1 ? "Finish" : "Next"}
               </button>
-            </Box>
+            </div> */}
           </React.Fragment>
         )}
       </div>

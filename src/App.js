@@ -11,13 +11,14 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<HorizontalLinearStepper />} />
-      </Routes>
-
-      <Footer />
+      <div className='h-screen'>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<HorizontalLinearStepper />} />
+        </Routes>
+        <Footer />
+      </div>
     </>
   );
 };

@@ -48,7 +48,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className='bg-[#3D7196] text-white px-10 py-10 md:px-20 lg:px-28 overflow-y-hidden sticky'>
+    <div className='bg-[#3D7196] text-white px-10 py-10 md:px-20 lg:px-28 overflow-y-hidden pt-20'>
       <div className='flex flex-col md:flex-row justify-center items-center md:items-start md:justify-between '>
         <div className='flex gap-6'>{icons.map((icon, idx) => icon)}</div>
 
