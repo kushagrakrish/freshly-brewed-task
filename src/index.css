@@ -18,3 +18,10 @@
 .box {
   box-shadow: 2px 4px 3px 0px rgba(255, 193, 7, 0.8);
 }
+
+.test-img {
+  background: url(./assets/cloud.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 400px;
+}
