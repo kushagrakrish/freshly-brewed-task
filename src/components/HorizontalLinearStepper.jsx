@@ -11,6 +11,28 @@ import FormTwo from "./FormTwo";
 
 const steps = ["", "", ""];
 
+const stepStyle = {
+  "& .Mui-active": {
+    "&.MuiStepIcon-root": {
+      color: "#047E70",
+      fontSize: "2rem",
+    },
+    "& .MuiStepConnector-line": {
+      borderColor: "#000000",
+      border: "1px solid",
+    },
+  },
+  "& .Mui-completed": {
+    "&.MuiStepIcon-root": {
+      color: "#047E70",
+      fontSize: "2rem",
+    },
+    "& .MuiStepConnector-line": {
+      borderColor: "#000000",
+      border: "1px solid",
+    },
+  },
+};
 export default function HorizontalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
@@ -34,24 +56,24 @@ export default function HorizontalLinearStepper() {
     setSkipped(newSkipped);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+  // const handleBack = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  // };
 
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error("You can't skip a step that isn't optional.");
-    }
+  // const handleSkip = () => {
+  //   if (!isStepOptional(activeStep)) {
+  //     // You probably want to guard against something like this,
+  //     // it should never occur unless someone's actively trying to break something.
+  //     throw new Error("You can't skip a step that isn't optional.");
+  //   }
 
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  //   setSkipped((prevSkipped) => {
+  //     const newSkipped = new Set(prevSkipped.values());
+  //     newSkipped.add(activeStep);
+  //     return newSkipped;
+  //   });
+  // };
 
   const handleReset = () => {
     setActiveStep(0);
@@ -68,6 +90,7 @@ export default function HorizontalLinearStepper() {
         </h2>
 
         <Stepper
+          sx={stepStyle}
           className='w-full xl:w-2/5 mb-5  lg:w-2/3'
           activeStep={activeStep}
         >
@@ -81,7 +104,7 @@ export default function HorizontalLinearStepper() {
               stepProps.completed = false;
             }
             return (
-              <Step key={label} {...stepProps}>
+              <Step key={index} {...stepProps}>
                 <StepLabel {...labelProps}>{label}</StepLabel>
               </Step>
             );
@@ -104,23 +127,6 @@ export default function HorizontalLinearStepper() {
             {activeStep === 2 && (
               <FormThree handleReset={handleReset} handleNext={handleNext} />
             )}
-            {/* <div className='flex items-center justify-end w-1/2'>
-              <Button
-                color='inherit'
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                sx={{ mr: 1 }}
-              >
-                Back
-              </Button>
-              <Box />
-              <button
-                onClick={handleNext}
-                className='px-8 py-1 rounded-full outline-none border-none  bg-gradient-to-b from-[#27EDD5] to-[#047E70] text-[#FFFFFF] text-xl '
-              >
-                {activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </button>
-            </div> */}
           </React.Fragment>
         )}
       </div>

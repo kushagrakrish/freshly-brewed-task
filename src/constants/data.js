@@ -41,6 +41,12 @@ export const serviceTypeOptions = [
   { value: "option3", label: "Option 3" },
 ];
 
+export const experienceYear = [
+  { value: "option1", label: "1" },
+  { value: "option2", label: "2" },
+  { value: "option3", label: "3" },
+];
+
 export const testimonial = [
   {
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",

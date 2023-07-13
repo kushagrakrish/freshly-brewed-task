@@ -1,14 +1,19 @@
 import React from "react";
 import Logo from "../assets/Logo.png";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className='hidden px-3.5 xl:px-28 lg:px-10 py-6 w-full bg-[#FFFFFF] shadow-2xl font-inter md:flex items-center justify-between sticky top-0 left-0 right-0 z-10'>
         {/* Logo Div */}
         <div className='flex items-center xl:gap-20 lg:gap-5 md:gap-5'>
-          <div className='logo w-28'>
+          <div
+            className='logo w-28 cursor-pointer'
+            onClick={() => navigate("/")}
+          >
             <img src={Logo} className='w-full' />
           </div>
           {/* A items */}

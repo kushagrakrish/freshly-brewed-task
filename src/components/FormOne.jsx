@@ -1,69 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import form1 from "../assets/form1.png";
-import GoogleIcon from "@mui/icons-material/Google";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
+import google from "../assets/Google.png";
+import linkedIn from "../assets/linked.png";
 
 const FormOne = ({ handleNext }) => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleNext();
+    console.log(formData); // Print form data to the console
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
   return (
     <>
       <div className='flex items-center justify-between w-full flex-col lg:flex-row lg:gap-10 xl:gap-0 md:items-start'>
         <div>
-          <div className='flex flex-wrap items-center justify-center md:justify-start w-full gap-5 my-10'>
-            <button className='flex  px-5 items-center gap-2 py-3 font-inter font-semibold outline-none border border-[#949090] rounded-lg text-base '>
-              <GoogleIcon />
-              Contine with Google
+          <div className='flex flex-wrap lg:flex-nowrap items-center justify-center md:justify-start w-full gap-5 my-10'>
+            <button className='flex px-3 items-center gap-2 py-3 font-inter font-semibold outline-none border border-[#949090] rounded-lg text-base '>
+              <img src={google} className='w-5' />
+              Continue with Google
             </button>
-            <button className='flex px-5 items-center gap-2 py-3 font-inter font-semibold outline-none border border-[#949090] rounded-lg text-base '>
-              <LinkedInIcon />
-              Contine with LinkedIn
+            <button className='flex px-3 items-center gap-2 py-3 font-inter font-semibold outline-none border border-[#949090] rounded-lg text-base '>
+              <img src={linkedIn} className='w-5' />
+              Continue with LinkedIn
             </button>
           </div>
-          <form className='w-full '>
-            <div class='mb-6'>
+          <form onSubmit={handleSubmit} className='w-full'>
+            <div className='mb-6'>
               <label
-                for='name'
-                class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
+                htmlFor='name'
+                className='block mb-2 text-sm font-semibold font-inter text-[#000000] dark:text-[#FFFFFF]'
               >
                 Full Name
               </label>
               <input
                 type='text'
-                id='text'
-                class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-[#FFFFFF] dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                id='fullName'
+                name='fullName'
+                value={formData.fullName}
+                onChange={handleChange}
+                className='bg-[#ffff] border border-[#949090]   text-[#000000] text-sm rounded-lg focus:outline-none focus:ring-[#949090] block w-full p-2.5'
                 placeholder='Full Name'
                 required
               />
             </div>
-            <div class='mb-6'>
+            <div className='mb-6'>
               <label
-                for='email'
-                class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
+                htmlFor='email'
+                className='block mb-2 text-sm font-semibold font-inter text-[#000000] dark:text-[#FFFFFF]'
               >
                 Your email
               </label>
               <input
                 type='email'
                 id='email'
-                class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-[#FFFFFF] dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                name='email'
+                value={formData.email}
+                onChange={handleChange}
+                className='bg-[#ffff] border border-[#949090]   text-[#000000] text-sm rounded-lg focus:outline-none focus:ring-[#949090] block w-full p-2.5'
                 placeholder='name@flowbite.com'
                 required
               />
             </div>
-            <div class='mb-6'>
+            <div className='mb-6'>
               <label
-                for='password'
-                class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
+                htmlFor='password'
+                className='block mb-2 text-sm font-semibold font-inter text-[#000000] dark:text-[#FFFFFF]'
               >
                 Your password
               </label>
               <input
                 type='password'
                 id='password'
-                class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-[#FFFFFF] dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                name='password'
+                value={formData.password}
+                onChange={handleChange}
+                className='bg-[#ffff] border border-[#949090]   text-[#000000] text-sm rounded-lg focus:outline-none focus:ring-[#949090] block w-full p-2.5'
                 required
               />
             </div>
@@ -71,7 +97,6 @@ const FormOne = ({ handleNext }) => {
             <button
               type='submit'
               className='px-8 py-1 rounded-full outline-none border-none  bg-gradient-to-b from-[#27EDD5] to-[#047E70] text-[#FFFFFF] text-xl float-right'
-              onClick={handleSubmit}
             >
               Next
             </button>
