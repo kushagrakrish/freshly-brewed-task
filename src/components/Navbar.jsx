@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/Logo.png";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const Navbar = () => {
   return (
@@ -14,6 +15,7 @@ const Navbar = () => {
           <ul className='flex items-center md:gap-5 xl:gap-20 lg:gap-10'>
             <li className='md:text-base lg:text-xl font-semibold font-inter cursor-pointer'>
               Filter
+              <ArrowDropDownIcon className='pl-1' fontSize='large' />
             </li>
             <li className='md:text-base lg:text-xl font-semibold font-inter cursor-pointer'>
               About Us
