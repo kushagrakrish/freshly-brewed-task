@@ -1,14 +1,20 @@
 import React from "react";
 import union from "../assets/cloud.png";
 import { testimonial } from "../constants/data";
-
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 const Testimonial = () => {
   return (
-    <div className='px-5 py-16'>
+    <div className='px-5 py-16 relative'>
       <h1 className='text-center font-semibold font-inter text-4xl text-[#000000] '>
         What our clients says about us?
       </h1>
-      <div className='flex flex-col lg:flex-row items-center justify-between my-14 gap-10 2xl:justify-around'>
+      <NavigateBeforeIcon
+        fontSize='large'
+        className='absolute left-0 top-1/2'
+      />
+      <NavigateNextIcon fontSize='large' className='absolute right-0 top-1/2' />
+      <div className='flex flex-col lg:flex-row items-center justify-between my-14 gap-10 2xl:justify-around xl:px-6'>
         {testimonial?.map((item, idx) => (
           <>
             <div key={idx}>
