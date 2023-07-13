@@ -17,7 +17,7 @@ const FormThree = ({ handleNext, handleReset }) => {
           <div class='mb-6'>
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Primary Expertise
             </label>
@@ -34,7 +34,7 @@ const FormThree = ({ handleNext, handleReset }) => {
           <div class='mb-6'>
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Relevant disciplines
             </label>
@@ -43,7 +43,7 @@ const FormThree = ({ handleNext, handleReset }) => {
           <div class='mb-6'>
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Tools you have experience in
             </label>
@@ -52,7 +52,7 @@ const FormThree = ({ handleNext, handleReset }) => {
           <div class='mb-6'>
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Skills you have experience in
             </label>
@@ -61,7 +61,7 @@ const FormThree = ({ handleNext, handleReset }) => {
           <div class='mb-6'>
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Your Target Mentees
             </label>

@@ -61,3 +61,22 @@ export const testimonial = [
     company: "HR Director, Meta",
   },
 ];
+
+export const faqsData = [
+  {
+    title: "What is the approval criteria to be a Mentor?",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+  },
+  {
+    title: "How does Mentor Bridge work for Mentors?",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+  },
+  {
+    title: "Can I charge fees of my choice?",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+  },
+  {
+    title: "Can I get guidance on how to be a mentor ?",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Suspendisse malesuada lacus ex, sit amet blandit leo lobortiseget.",
+  },
+];

@@ -30,7 +30,7 @@ const FormTwo = ({ handleNext }) => {
           <div class='mb-6'>
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Job Title
             </label>
@@ -39,7 +39,7 @@ const FormTwo = ({ handleNext }) => {
           <div class='mb-6'>
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Company
             </label>
@@ -48,7 +48,7 @@ const FormTwo = ({ handleNext }) => {
           <div className=' mb-6'>
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Experience
             </label>
@@ -61,7 +61,7 @@ const FormTwo = ({ handleNext }) => {
           <div className="mb-6'">
             <label
               for='name'
-              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-white'
+              class='block mb-2 text-sm font-semibold font-inter text-gray-900 dark:text-[#FFFFFF]'
             >
               Bio
             </label>
