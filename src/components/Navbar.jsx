@@ -5,7 +5,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 const Navbar = () => {
   return (
     <>
-      <div className='hidden px-3.5 xl:px-14 lg:px-10 py-6 w-full bg-[#FFFFFF] shadow-2xl font-inter md:flex items-center justify-between sticky top-0 left-0 right-0 z-10'>
+      <div className='hidden px-3.5 xl:px-28 lg:px-10 py-6 w-full bg-[#FFFFFF] shadow-2xl font-inter md:flex items-center justify-between sticky top-0 left-0 right-0 z-10'>
         {/* Logo Div */}
         <div className='flex items-center xl:gap-20 lg:gap-5 md:gap-5'>
           <div className='logo w-28'>

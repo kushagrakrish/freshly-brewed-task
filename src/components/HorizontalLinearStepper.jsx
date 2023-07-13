@@ -59,7 +59,7 @@ export default function HorizontalLinearStepper() {
 
   return (
     <>
-      <div className='w-full py-12  px-10 overflow-hidden h-full'>
+      <div className='w-full py-12  px-10 overflow-hidden h-full xl:px-28'>
         <h1 className='text-2xl font-semibold mb-2 font-inter'>
           Great choice to help people!
         </h1>
@@ -67,7 +67,10 @@ export default function HorizontalLinearStepper() {
           Tell us few details about you & your expertise...
         </h2>
 
-        <Stepper className='w-2/3 mb-5' activeStep={activeStep}>
+        <Stepper
+          className='w-full xl:w-2/5 mb-5  lg:w-2/3'
+          activeStep={activeStep}
+        >
           {steps.map((label, index) => {
             const stepProps = {};
             const labelProps = {};

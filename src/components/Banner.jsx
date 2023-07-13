@@ -1,8 +1,14 @@
 import React from "react";
 import BannerImg from "../assets/banner.png";
 import Rocket from "../assets/rocket.png";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  };
   return (
     <>
       <div className='px-6 h-screen flex flex-col lg:flex-row-reverse items-center justify-center w-full banner-bg  overflow-hidden bg-gradient-to-t from-[#7BE2C3] to-[#C0E3FC] md:justify-start '>
@@ -24,7 +30,10 @@ const Banner = () => {
             <button className='xl:px-16 px-10 py-4 xl:py-6 rounded-2xl bg-[#358279] text-[#FFFF] font-inter font-semibold xl:text-2xl box text-xl outline-none border-none'>
               Find a Mentor
             </button>
-            <button className='xl:px-16 xl:py-6 px-10 py-4 rounded-2xl bg-[#358279] text-[#FFFF] font-inter font-semibold xl:text-2xl box text-xl outline-none border-none'>
+            <button
+              onClick={handleClick}
+              className='xl:px-16 xl:py-6 px-10 py-4 rounded-2xl bg-[#358279] text-[#FFFF] font-inter font-semibold xl:text-2xl box text-xl outline-none border-none'
+            >
               Become Mentor
             </button>
           </div>
