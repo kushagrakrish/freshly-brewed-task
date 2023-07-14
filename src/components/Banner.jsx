@@ -11,7 +11,7 @@ const Banner = () => {
   };
   return (
     <>
-      <div className='px-6 h-screen flex flex-col lg:flex-row-reverse items-center justify-center w-full overflow-hidden bg-gradient-to-t from-[#7BE2C3] to-[#C0E3FC]'>
+      <div className='px-6  flex flex-col lg:flex-row-reverse items-center justify-center w-full overflow-hidden bg-gradient-to-t from-[#7BE2C3] to-[#C0E3FC]'>
         {/* Main image */}
         <div className='w-[300px] md:w-[400px] lg:w-[600px]'>
           <img src={BannerImg} alt='' className='w-full' />
@@ -26,7 +26,7 @@ const Banner = () => {
             Find a mentor or Lead the path for someone <br />
             It’s a win win!
           </h2>
-          <div className='flex flex-wrap justify-center items-center gap-10 mt-7 lg:mt-16'>
+          <div className='flex flex-wrap justify-center items-center gap-10 mt-7 lg:mt-16 mb-10'>
             <button className='xl:px-16 px-10 py-2 md:py-4  xl:py-6 rounded-2xl bg-[#358279] text-[#FFFF] font-inter font-semibold xl:text-2xl box text-lg outline-none border-none'>
               Find a Mentor
             </button>

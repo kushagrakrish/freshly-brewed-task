@@ -1,7 +1,12 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import React, { useState } from "react";
 import from2 from "../assets/formtwo.png";
-import { experienceYear, serviceTypeOptions } from "../constants/data";
+import {
+  companyOptions,
+  experienceMonth,
+  experienceYear,
+  jobTitle,
+} from "../constants/data";
 import CustomSelect from "./CustomSelectInput";
 import ProfileUploader from "./ProfileUploader";
 
@@ -51,7 +56,7 @@ const FormTwo = ({ handleNext }) => {
               </label>
               <CustomSelect
                 placeholder='Eg: Product designer, Graphic designer'
-                options={serviceTypeOptions}
+                options={jobTitle}
                 name='jobTitle'
                 value={formData.jobTitle}
                 onChange={(value) => handleChange("jobTitle", value)}
@@ -66,7 +71,7 @@ const FormTwo = ({ handleNext }) => {
               </label>
               <CustomSelect
                 placeholder='Eg: Amazon,Meta'
-                options={serviceTypeOptions}
+                options={companyOptions}
                 name='company'
                 value={formData.company}
                 onChange={(value) => handleChange("company", value)}
@@ -79,22 +84,25 @@ const FormTwo = ({ handleNext }) => {
               >
                 Experience
               </label>
-              <div className='flex items-center gap-5'>
-                <CustomSelect
-                  placeholder='Y'
-                  options={experienceYear}
-                  name='experience1'
-                  value={formData.experience1}
-                  onChange={(value) => handleChange("experience1", value)}
-                />
-
-                <CustomSelect
-                  placeholder='M'
-                  options={serviceTypeOptions}
-                  name='experience2'
-                  value={formData.experience2}
-                  onChange={(value) => handleChange("experience2", value)}
-                />
+              <div className='flex items-center gap-5 '>
+                <div className='w-1/4'>
+                  <CustomSelect
+                    placeholder='Y'
+                    options={experienceYear}
+                    name='experience1'
+                    value={formData.experience1}
+                    onChange={(value) => handleChange("experience1", value)}
+                  />
+                </div>
+                <div className='w-1/4'>
+                  <CustomSelect
+                    placeholder='M'
+                    options={experienceMonth}
+                    name='experience2'
+                    value={formData.experience2}
+                    onChange={(value) => handleChange("experience2", value)}
+                  />
+                </div>
               </div>
             </div>
             <div className="mb-6'">

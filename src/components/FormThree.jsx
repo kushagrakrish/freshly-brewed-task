@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import from3 from "../assets/form3.png";
-import { serviceTypeOptions } from "../constants/data";
+import {
+  expertiseOptions,
+  relevantDisciplinesOptions,
+  serviceTypeOptions,
+  skillOptions,
+  toolOptions,
+} from "../constants/data";
 import CustomSelect from "./CustomSelectInput";
 import AddIcon from "@mui/icons-material/Add";
 
@@ -17,7 +23,7 @@ const FormThree = ({ handleNext, handleReset }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData); // Log form data to the console
-    handleNext();
+    // handleNext();
     handleReset();
   };
 
@@ -32,7 +38,7 @@ const FormThree = ({ handleNext, handleReset }) => {
     <>
       <div className='flex items-center justify-between w-full flex-col lg:flex-row lg:gap-10 xl:gap-0 md:items-start'>
         <div className='w-full xl:w-2/5'>
-          <form className='w-full'>
+          <form onSubmit={handleSubmit} className='w-full'>
             <div className='mb-6'>
               <label
                 htmlFor='primaryExpertise'
@@ -41,16 +47,16 @@ const FormThree = ({ handleNext, handleReset }) => {
                 Primary Expertise
               </label>
               <CustomSelect
-                options={serviceTypeOptions}
+                options={expertiseOptions}
                 placeholder='Select primary expertise'
                 value={formData.primaryExpertise}
                 onChange={(value) => handleChange("primaryExpertise", value)}
               />
             </div>
-            <div className='mb-6'>
-              <div className='flex items-center justify-center py-2 rounded-lg gap-3 border border-[#949090]'>
+            <div className='mb-6 '>
+              <div className='flex items-center justify-center py-2 rounded-lg gap-3 border border-[#949090] w-full'>
                 <AddIcon />
-                <h1 className='text-lg font-semibold font-inter'>
+                <h1 className='text-sm md:text-lg font-semibold font-inter'>
                   Add Secondary Expertise
                 </h1>
               </div>
@@ -63,7 +69,7 @@ const FormThree = ({ handleNext, handleReset }) => {
                 Relevant Disciplines
               </label>
               <CustomSelect
-                options={serviceTypeOptions}
+                options={relevantDisciplinesOptions}
                 placeholder='Select relevant disciplines'
                 value={formData.relevantDisciplines}
                 onChange={(value) => handleChange("relevantDisciplines", value)}
@@ -77,7 +83,7 @@ const FormThree = ({ handleNext, handleReset }) => {
                 Tools You Have Experience In
               </label>
               <CustomSelect
-                options={serviceTypeOptions}
+                options={toolOptions}
                 placeholder='Select tools of experience'
                 value={formData.toolsExperience}
                 onChange={(value) => handleChange("toolsExperience", value)}
@@ -91,7 +97,7 @@ const FormThree = ({ handleNext, handleReset }) => {
                 Skills You Have Experience In
               </label>
               <CustomSelect
-                options={serviceTypeOptions}
+                options={skillOptions}
                 placeholder='Select skills of experience'
                 value={formData.skillsExperience}
                 onChange={(value) => handleChange("skillsExperience", value)}
@@ -111,14 +117,14 @@ const FormThree = ({ handleNext, handleReset }) => {
                 onChange={(value) => handleChange("targetMentees", value)}
               />
             </div>
-
-            <button
-              type='submit'
-              className='px-8 py-1 rounded-full outline-none border-none bg-gradient-to-b from-[#27EDD5] to-[#047E70] text-[#FFFFFF] text-xl float-right'
-              onClick={handleSubmit}
-            >
-              Complete
-            </button>
+            <div className='flex items-center justify-center'>
+              <button
+                type='submit'
+                className='px-8 py-1 rounded-full outline-none border-none bg-gradient-to-b from-[#27EDD5] to-[#047E70] text-[#FFFFFF] text-xl '
+              >
+                Complete
+              </button>
+            </div>
           </form>
         </div>
         <div className='flex items-start justify-start'>
