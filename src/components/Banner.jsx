@@ -11,7 +11,7 @@ const Banner = () => {
   };
   return (
     <>
-      <div className='px-6  flex flex-col lg:flex-row-reverse items-center justify-center w-full overflow-hidden bg-gradient-to-t from-[#7BE2C3] to-[#C0E3FC]'>
+      <div className='px-6  flex flex-col lg:flex-row-reverse items-center justify-center w-full overflow-hidden bg-gradient-to-t from-[#7BE2C3] to-[#C0E3FC] lg:h-screen'>
         {/* Main image */}
         <div className='w-[300px] md:w-[400px] lg:w-[600px]'>
           <img src={BannerImg} alt='' className='w-full' />
